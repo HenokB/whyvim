@@ -192,7 +192,6 @@ def compare_users():
     ax3.axis('equal')
     ax3.set_title(f"Top Languages of {username2}")
 
-    # Display the plots
     plt.tight_layout()
     plt.show()
 
@@ -344,6 +343,42 @@ def recommend_repositories():
     for repo in recommendations:
         print(GREEN + f"Name: {repo['name']}," + YELLOW + f" ⭐: {repo['stargazers_count']}," + BLUE + f" URL: {repo['html_url']}" + RESET)
 
+def analyze_commit_messages():
+    CYAN = "\033[96m"
+    GREEN = "\033[92m"
+    YELLOW = "\033[93m"
+    BLUE = "\033[94m"
+    RED = "\033[91m"
+    
+    username = input("Enter the GitHub username: ")
+    repos = fetch_user_repos(username)
+    if not repos:
+        print(RED + f"Error fetching user repositories!" + "\033[0m")
+        return
+
+    commit_messages = []
+
+    for repo in repos:
+        repo_name = repo["name"]
+        commits_url = f"https://api.github.com/repos/{username}/{repo_name}/commits?per_page=100"  # Maximum limit for per_page is 100
+ 
+        response = requests.get(commits_url)
+
+        if response.status_code == 200:
+            commits_data = response.json()
+            for commit in commits_data:
+                commit_messages.append(commit["commit"]["message"])
+
+    # Count the commit messages
+    commit_message_counts = Counter(commit_messages)
+    most_common_messages = commit_message_counts.most_common(10)  # Get top 10 common commit messages
+
+    print("\nTop 10 most common commit messages:")
+    for message, count in most_common_messages:
+        print(GREEN + f"{message} - {count} times" + "\033[0m")
+
+    return most_common_messages
+
 
 def show_help():
     help_dict = {
@@ -356,12 +391,14 @@ def show_help():
         'help': 'Show this help text',
         'showgithub': 'Show GitHub stats for a specific user',      
         'compare': 'Compare GitHub stats between two users', 
-         'diff': 'Compare two branches of a repository'
+        'diff': 'Compare two branches of a repository',
+        'commitmsg': "Displays top most committd commit messages"
        
     }
 
     print("Available Commands:")
     for command, description in help_dict.items():
+
         print(f"\033[92m{command}\033[0m : \033[0m{description}")
 
 
@@ -404,6 +441,9 @@ while True:
         compare_branches()    
     elif action == 'searchgit':
         recommend_repositories()
+    elif action == 'commitmsg':
+        analyze_commit_messages()
+
     else:
         print("Invalid command")
    
