@@ -1,6 +1,6 @@
 <center>
 <h1>WhyVim</h1>
-<h3>⚠️A work in progress<h3>
+<h3>⚠️A work in progress. Adding more features everyday<h3>
 </center>
 This Python script offers a collection of functionalities for GitHub analytics and local directory management. It provides the ability to fetch user statistics from GitHub, compare GitHub users, get detailed analytics on repositories, compare repository branches, and manage directories on your local system.
 
