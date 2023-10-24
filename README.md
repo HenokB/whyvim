@@ -1,6 +1,6 @@
 <p align="center">
 <h1>WhyVim</h1>
-<h3>⚠️A work in progress. Adding more features everyday<h3>
+<h3>⚠️A work in progress. Adding more features everyday</h3>
 </p>
 
 
