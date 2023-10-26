@@ -47,11 +47,13 @@ def go_up():
         print("Already at the root directory")
 
 def run_git_command(git_command):
+    git_command_list = git_command.split()  # Split the command into a list of strings
     try:
-        result = subprocess.run(git_command, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        result = subprocess.run(git_command_list, check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         print("\033[92m" + result.stdout + "\033[0m")  # Green for success
     except subprocess.CalledProcessError as e:
         print("\033[91m" + e.stderr + "\033[0m")  # Red for error
+
 
 def show_github_stats():
     username = input("Enter the GitHub username: 🧑‍💻 ")

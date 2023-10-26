@@ -138,19 +138,18 @@ HTML (5 repos)
 
 ```bash
 >>> commitmsg
-Enter the GitHub username: HenokB
+Enter the GitHub username: wei
 
-Top 10 most common commit messages:
-Update README.md - 146 times
-Updating the README! - 27 times
-Merge branch 'main' into main - 21 times
-Add files via upload - 21 times
-Update data.json - 18 times
-shell commands - 16 times
-shell variables - 13 times
-Bug fixes - 12 times
-Initial commit - 11 times
-update readme.md - 9 times
+docs - 12 times
+Update publish.yml - 9 times
+Initial commit - 8 times
+chore(release): update API docs [ci skip] - 6 times       
+Initialize project using Create React App - 5 times       
+Update README.md - 5 times
+Merge branch 'main' into remove-deprecated-tests - 4 times
+Merge branch 'main' into cpk-related-models - 3 times     
+Created a new Expo app - 3 times
+Update Dockerfile - 3 times
 ```
 
 ## Visualization:
@@ -163,13 +162,11 @@ numpy: Required for operations with matplotlib.
 Usage:
 Run the script in your preferred Python environment. Depending on the feature you wish to use, call the appropriate function. For instance:
 
-```python
 
-show_github_stats()
-#Will prompt you for a GitHub username and then display detailed statistics about the user.
-```
 ### Notes:
 Ensure you have the required libraries installed using ```pip install requests matplotlib numpy```.
+
+
 As this script uses the GitHub API, there's a limit to the number of requests you can make in a given time period. Make sure to consider this when making multiple or frequent calls.
 
 
