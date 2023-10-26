@@ -17,6 +17,20 @@ change_dir(name): Change to a specified directory.
 go_up(): Navigate up to the parent directory.
 run_git_command(git_command): Execute Git commands.
 ```
+
+## Compare to GitHub users.
+
+You can compare two users and it will do a visualization of the users stats and output it like below.
+
+```bash
+>>> compare
+Enter first GitHub username: HenokB
+Enter second GitHub username: rauchg
+```
+
+![compare](https://github.com/HenokB/whyvim/assets/46082799/cf8e9b34-1f0a-4c8b-ab0f-5a4e075dc58c)
+
+
 ## GitHub User Analytics:
 ```bash
 
