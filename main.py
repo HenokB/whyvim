@@ -197,9 +197,7 @@ def compare_users():
 
 
 def fetch_commit_activity(username, repo_name):
-    """
-    Fetch the commit activity for a given repository over the past year.
-    """
+    
     url = f"https://api.github.com/repos/{username}/{repo_name}/stats/commit_activity"
     response = requests.get(url)
     
@@ -209,9 +207,7 @@ def fetch_commit_activity(username, repo_name):
     return response.json()
 
 def fetch_contributors_stats(username, repo_name):
-    """
-    Fetch contributor stats for a given repository.
-    """
+    
     url = f"https://api.github.com/repos/{username}/{repo_name}/stats/contributors"
     response = requests.get(url)
     
@@ -387,12 +383,12 @@ def show_help():
         'cd': '[Directory Name] : Change to subdirectory',
         'up': 'Go to parent directory',
         'git': '[Git Command] : Execute Git commands',
-        'exit': 'Exit the terminal',
-        'help': 'Show this help text',
         'showgithub': 'Show GitHub stats for a specific user',      
         'compare': 'Compare GitHub stats between two users', 
         'diff': 'Compare two branches of a repository',
-        'commitmsg': "Displays top most committd commit messages"
+        'commitmsg': "Displays top most committd commit messages",
+        'help': 'Show this help text',
+        'exit': 'Exit the terminal'
        
     }
 
