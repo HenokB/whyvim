@@ -18,7 +18,7 @@ go_up(): Navigate up to the parent directory.
 run_git_command(git_command): Execute Git commands.
 ```
 
-## Compare to GitHub users.
+## Compare two GitHub users.
 
 You can compare two users and it will do a visualization of the users stats and output it like below.
 
@@ -132,12 +132,26 @@ HTML (5 repos)
 🐦 Twitter: https://twitter.com/henokademtew
 ```
 
-Repository Analytics: display_repository_analytics(): Provides commit activity and contributor stats for a given user's repository.
-compare_branches(): Compares two branches of a repository and fetches detailed analytics.
-Utilities:
-```
+## Analyzes GitHub commit messages
 
-Functions like fetch_user_details(), fetch_user_repos(), fetch_commit_activity(), and fetch_contributors_stats() assist in fetching relevant data from the GitHub API for the above functionalities.
+#### Demo
+
+```bash
+>>> commitmsg
+Enter the GitHub username: HenokB
+
+Top 10 most common commit messages:
+Update README.md - 146 times
+Updating the README! - 27 times
+Merge branch 'main' into main - 21 times
+Add files via upload - 21 times
+Update data.json - 18 times
+shell commands - 16 times
+shell variables - 13 times
+Bug fixes - 12 times
+Initial commit - 11 times
+update readme.md - 9 times
+```
 
 ## Visualization:
 Uses matplotlib to generate bar and pie charts for visual comparison.
